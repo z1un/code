@@ -14,10 +14,13 @@ def encode():
 
 
 def decode():
-    a = input('请输入密文: ')
-    a = a + '=='
-    a = str(base64.b64decode(a), "utf-8")
-    print(a)
+    try:
+        a = input('请输入密文: ')
+        a = a + '=='
+        a = str(base64.b64decode(a), "utf-8")
+        print(a)
+    except:
+        print('无法识别密文')
 
 
 def main():
