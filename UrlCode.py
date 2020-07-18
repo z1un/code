@@ -1,6 +1,6 @@
 # url解码、编码
 # Author: zjun
-# Github: bestreder
+# Github: z1un
 # Data: 2020.02.29
 
 from urllib.parse import quote, unquote
