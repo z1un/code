@@ -1,6 +1,6 @@
 # base64编码、解码
 # Author: zjun
-# Github: bestreder
+# Github: z1un
 # Data: 2020.02.29
 
 import base64
