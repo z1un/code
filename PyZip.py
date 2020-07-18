@@ -1,6 +1,6 @@
 # zip爆破
 # Author: zjun
-# Github: bestreder
+# Github: z1un
 # Data: 2020.02.29
 
 import zipfile
