@@ -1,6 +1,6 @@
 # 图片信息获取
 # Author: zjun
-# Github: bestreder
+# Github: z1un
 # Data: 2020.04.08
 
 from PIL import Image
