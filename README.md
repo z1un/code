@@ -1,5 +1,5 @@
-自用python小工具集合,部分来源网络
------------------------------
+# python小工具集合
+
 ### BaseCode.py
 base64编码转换
 
@@ -17,3 +17,11 @@ zip多进程爆破
 
 ### Garbagedata.py
 垃圾数据生成
+
+### NTLMhash.py
+
+NTLM hash算法
+
+### LMhash.py
+
+LM hash算法
