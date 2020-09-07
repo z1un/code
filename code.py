@@ -87,7 +87,11 @@ def main():
     2. 凯撒密码
     3. Url编码
     4. LMhash
-    5. NTLMhash''')
+    5. NTLMhash
+    6. Hex
+    7. Unicode
+    8. Base32
+    9. Base16''')
     a = input('请选择: ')
     if a == '1':
         print('''Base64
@@ -123,7 +127,8 @@ def main():
         else:
             print('您的输入有误！')
     if a == '4':
-        passwd = input('输入带加密字符: ')
+        passwd = input('''LMhash
+    输入带加密字符: ''')
         print('你的输入是:', passwd)
         print('转化为大写:', passwd.upper())
 
@@ -168,10 +173,59 @@ def main():
         LM = LMOne + LMTwo
         print('LM hash:', LM)
     if a == '5':
-        passwd = input('输入带加密字符: ')
+        passwd = input('''NTLMhash
+    输入带加密字符: ''')
         os.system(
             '''python2 -c "import hashlib,binascii; print binascii.hexlify(hashlib.new('md4', '{}'.encode('utf-16le')).digest())"'''.format(
                 passwd))
+    if a == '6':
+        print('''Hex
+    1. hex转字符串
+    2. 字符串转hex''')
+        b = input('请选择: ')
+        if b == '1':
+            code = input('输入hex: ')
+            print(bytes.fromhex(code).decode())
+        if b == '2':
+            code = input('输入字符串: ')
+            print(code.encode().hex())
+    if a == '7':
+        print('''Unicode
+    1. Unicode转中文
+    2. 中文转Unicode''')
+        b = input('请选择: ')
+        if b == '1':
+            code = input('请输入Unicode字符: ')
+            print(code.encode('utf-8').decode("unicode_escape"))
+        if b == '2':
+            code = input('请输入中文: ')
+            print(code.encode("unicode_escape").decode())
+    if a == '8':
+        print('''Base32
+    1. 编码
+    2. 解码''')
+        b = input('请选择: ')
+        if b == '1':
+            code = input('请输入：')
+            code = bytes(code, encoding="utf8")
+            print(base64.b32encode(code).decode())
+        if b == '2':
+            code = input('请输入：')
+            code = bytes(code, encoding="utf8")
+            print(base64.b32decode(code).decode())
+    if a == '9':
+        print('''Base16
+    1. 编码
+    2. 解码''')
+        b = input('请输入：')
+        if b == '1':
+            code = input('请输入：')
+            code = bytes(code, encoding="utf8")
+            print(base64.b16encode(code).decode())
+        if b == '2':
+            code = input('请输入：')
+            code = bytes(code, encoding="utf8")
+            print(base64.b16decode(code).decode())
 
 
 if __name__ == '__main__':
